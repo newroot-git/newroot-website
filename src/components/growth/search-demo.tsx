@@ -40,7 +40,7 @@ export default function SearchDemo() {
   }, [activeQuery, query]);
 
   return (
-    <section className="py-[140px] px-6 bg-surface">
+    <section className="py-[120px] px-6 bg-surface">
       <div className="max-w-[1280px] mx-auto">
         <motion.span
           initial={{ opacity: 0 }}

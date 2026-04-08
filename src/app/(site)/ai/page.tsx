@@ -40,7 +40,6 @@ export default function AIPage() {
         label="How it works"
         headline="Stupidly"
         accentWord="simple."
-        columns={3}
         steps={[
           { number: "01", title: "Discovery", description: "We map your workflows, find bottlenecks, and deliver a prioritised opportunity report.", detail: "$500-$1K" },
           { number: "02", title: "Build", description: "Custom solution. Tested, documented, trained. Purpose-built for your business.", detail: "2-4 weeks" },

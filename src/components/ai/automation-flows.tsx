@@ -59,168 +59,73 @@ const flows: FlowDemo[] = [
   },
 ];
 
-const nodeColors = {
-  trigger: { bg: "bg-accent/10", border: "border-accent/20", text: "text-accent", dot: "bg-accent" },
-  process: { bg: "bg-foreground/[0.03]", border: "border-foreground/[0.08]", text: "text-foreground", dot: "bg-foreground/30" },
-  output: { bg: "bg-accent/10", border: "border-accent/20", text: "text-accent", dot: "bg-accent" },
-};
-
-function FlowVisualization({ flow, isActive }: { flow: FlowDemo; isActive: boolean }) {
-  const [activeNodeIndex, setActiveNodeIndex] = useState(-1);
-
-  // Auto-animate through nodes when active
-  useState(() => {
-    if (!isActive) return;
-    let i = 0;
-    const interval = setInterval(() => {
-      setActiveNodeIndex(i);
-      i++;
-      if (i >= flow.nodes.length) {
-        setTimeout(() => setActiveNodeIndex(-1), 1500);
-        i = 0;
-      }
-    }, 800);
-    return () => clearInterval(interval);
-  });
-
-  return (
-    <div className="space-y-3">
-      {flow.nodes.map((node, i) => {
-        const colors = nodeColors[node.type];
-        const isNodeActive = isActive && activeNodeIndex >= i;
-
-        return (
-          <div key={node.id}>
-            {/* Connection line */}
-            {i > 0 && (
-              <div className="flex justify-center py-1">
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: 20 }}
-                  transition={{ delay: i * 0.15, duration: 0.3 }}
-                  className={`w-[2px] ${isNodeActive ? "bg-accent" : "bg-foreground/10"} transition-colors duration-300`}
-                />
-              </div>
-            )}
-
-            {/* Node */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.4 }}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl border ${colors.bg} ${colors.border} ${
-                isNodeActive ? "ring-2 ring-accent/30 shadow-[0_0_20px_rgba(var(--accent-rgb,139,92,246),0.15)]" : ""
-              } transition-all duration-300`}
-            >
-              {/* Animated dot */}
-              <motion.div
-                animate={isNodeActive ? { scale: [1, 1.4, 1] } : {}}
-                transition={{ duration: 0.6, repeat: isNodeActive ? Infinity : 0 }}
-                className={`w-2.5 h-2.5 rounded-full ${isNodeActive ? "bg-accent" : colors.dot} transition-colors duration-300`}
-              />
-              <span className={`text-sm font-medium ${isNodeActive ? "text-accent" : colors.text} transition-colors duration-300`}>
-                {node.label}
-              </span>
-              {node.type === "trigger" && (
-                <span className="ml-auto text-[10px] font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent">
-                  TRIGGER
-                </span>
-              )}
-              {node.type === "output" && (
-                <span className="ml-auto text-[10px] font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent">
-                  RESULT
-                </span>
-              )}
-            </motion.div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
 export default function AutomationFlows() {
   const [activeFlow, setActiveFlow] = useState(0);
 
   return (
-    <section className="py-[140px] px-6 bg-surface">
+    <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4"
-        >
-          See it in action
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] max-w-[650px] mb-6"
-        >
-          One trigger.{" "}
-          <span className="font-display italic font-normal text-accent">
-            Everything handled.
-          </span>
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-muted text-lg leading-relaxed max-w-[520px] mb-12"
-        >
-          Click a scenario to see how a single event triggers an entire automated workflow — no manual steps, no dropped balls.
-        </motion.p>
+        <div className="text-center max-w-[700px] mx-auto mb-12">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
+          >
+            See it in action
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-5"
+          >
+            One trigger.{" "}
+            <span className="font-display italic font-normal text-accent">
+              Everything handled.
+            </span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-muted text-lg leading-relaxed max-w-[520px] mx-auto"
+          >
+            Click a scenario to see how a single event triggers an entire automated workflow.
+          </motion.p>
+        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* Flow selector */}
           <div className="space-y-3">
             {flows.map((flow, i) => (
               <motion.button
                 key={flow.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.08 }}
                 onClick={() => setActiveFlow(i)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${
-                  activeFlow === i
-                    ? "bg-background border-accent/20 shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
-                    : "bg-background border-foreground/[0.04] hover:border-foreground/[0.08]"
+                className={`w-full text-left bg-white rounded-2xl border p-6 transition-all duration-200 ${
+                  activeFlow === i ? "border-accent/30" : "border-foreground/[0.06] hover:border-foreground/[0.12]"
                 }`}
               >
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className={`text-lg font-semibold ${activeFlow === i ? "text-accent" : "text-foreground"} transition-colors`}>
-                    {flow.title}
-                  </h3>
-                  <motion.div
-                    animate={activeFlow === i ? { scale: [1, 1.2, 1] } : {}}
-                    transition={{ duration: 1, repeat: activeFlow === i ? Infinity : 0 }}
-                    className={`w-3 h-3 rounded-full mt-1.5 ${activeFlow === i ? "bg-accent" : "bg-foreground/10"}`}
-                  />
-                </div>
+                <h3 className={`font-semibold mb-1 ${activeFlow === i ? "text-accent" : "text-foreground"} transition-colors`}>
+                  {flow.title}
+                </h3>
                 <p className="text-sm text-muted mb-3">{flow.problem}</p>
-                <div className="bg-accent/[0.06] rounded-lg px-3 py-2">
-                  <p className="text-[13px] font-medium text-accent leading-snug">
-                    {flow.stat}
-                  </p>
-                  <p className="text-[10px] text-muted mt-1">
-                    — {flow.statSource}
-                  </p>
-                </div>
+                <p className="text-[12px] text-accent leading-snug">{flow.stat}</p>
+                <p className="text-[10px] text-muted mt-1">— {flow.statSource}</p>
               </motion.button>
             ))}
           </div>
 
           {/* Flow visualization */}
-          <div className="bg-background rounded-2xl border border-foreground/[0.04] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-8">
+          <div className="bg-white rounded-2xl border border-foreground/[0.06] p-8">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium text-accent">
-                {flows[activeFlow].title} — Live flow
-              </span>
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-sm font-medium text-accent">{flows[activeFlow].title}</span>
             </div>
 
             <AnimatePresence mode="wait">
@@ -230,27 +135,51 @@ export default function AutomationFlows() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
+                className="space-y-2"
               >
-                <FlowVisualization
-                  flow={flows[activeFlow]}
-                  isActive={true}
-                />
+                {flows[activeFlow].nodes.map((node, i) => (
+                  <div key={node.id}>
+                    {i > 0 && (
+                      <div className="flex justify-center py-1">
+                        <motion.div
+                          initial={{ height: 0 }}
+                          animate={{ height: 16 }}
+                          transition={{ delay: i * 0.12, duration: 0.2 }}
+                          className="w-[1px] bg-foreground/10"
+                        />
+                      </div>
+                    )}
+                    <motion.div
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.12, duration: 0.3 }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl border ${
+                        node.type === "trigger" || node.type === "output"
+                          ? "border-accent/15 bg-accent/[0.03]"
+                          : "border-foreground/[0.06]"
+                      }`}
+                    >
+                      <span className={`w-2 h-2 rounded-full ${
+                        node.type === "trigger" || node.type === "output" ? "bg-accent" : "bg-foreground/20"
+                      }`} />
+                      <span className="text-sm font-medium text-foreground">{node.label}</span>
+                      {(node.type === "trigger" || node.type === "output") && (
+                        <span className="ml-auto text-[9px] font-medium text-accent uppercase tracking-wider">
+                          {node.type}
+                        </span>
+                      )}
+                    </motion.div>
+                  </div>
+                ))}
               </motion.div>
             </AnimatePresence>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-8 pt-6 border-t border-foreground/[0.06] flex items-center gap-3"
-            >
-              <svg viewBox="0 0 12 12" className="w-3.5 h-3.5 text-accent" fill="currentColor">
-                <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" />
-              </svg>
-              <span className="text-sm text-muted">
-                Total time: <span className="font-semibold text-accent">&lt;30 seconds</span> — no human intervention required
+            <div className="mt-6 pt-4 border-t border-foreground/[0.06] flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <span className="text-xs text-muted">
+                Total time: <span className="font-semibold text-accent">&lt;30 seconds</span> — no human needed
               </span>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

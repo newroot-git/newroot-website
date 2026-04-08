@@ -25,7 +25,7 @@ const reasons = [
 
 export default function WhyContent() {
   return (
-    <section className="py-[140px] px-6">
+    <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
         <motion.span
           initial={{ opacity: 0 }}

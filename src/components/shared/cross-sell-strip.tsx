@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { services } from "@/lib/services";
 
 interface CrossSellItem {
   label: string;
@@ -11,67 +12,62 @@ interface CrossSellItem {
 
 interface CrossSellStripProps {
   headline: string;
-  accentWord?: string;
   items: CrossSellItem[];
 }
 
-export default function CrossSellStrip({
-  headline,
-  accentWord,
-  items,
-}: CrossSellStripProps) {
-  return (
-    <section className="py-[140px] px-6 bg-surface">
-      <div className="max-w-[1280px] mx-auto">
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4"
-        >
-          The bigger picture
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-display text-[clamp(36px,4vw,56px)] leading-[1.1] max-w-[600px] mb-12"
-        >
-          {headline}
-          {accentWord && (
-            <>
-              {" "}
-              <span className="not-italic text-accent">{accentWord}</span>
-            </>
-          )}
-        </motion.h2>
+function getColor(href: string) {
+  return services.find((s) => s.href === href)?.color ?? "#0055FF";
+}
 
-        <div className="grid md:grid-cols-2 gap-3">
-          {items.map((item, i) => (
-            <motion.div
-              key={item.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -4 }}
-            >
-              <Link
-                href={item.href}
-                className="block bg-background rounded-2xl border border-foreground/[0.04] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-7 group transition-shadow hover:shadow-lg"
+export default function CrossSellStrip({ headline, items }: CrossSellStripProps) {
+  return (
+    <section className="py-[120px] px-6">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="text-center max-w-[700px] mx-auto mb-12">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
+          >
+            The bigger picture
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans font-bold text-[clamp(28px,3.5vw,40px)] leading-[1.15] tracking-[-0.02em]"
+          >
+            {headline}
+          </motion.h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-4 max-w-[800px] mx-auto">
+          {items.map((item, i) => {
+            const color = getColor(item.href);
+            return (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
               >
-                <span className="text-xs font-medium px-3 py-1 rounded-full bg-accent-light text-accent">
-                  {item.label}
-                </span>
-                <p className="mt-4 text-[15px] text-foreground leading-relaxed">
-                  {item.description}
-                </p>
-                <span className="mt-3 inline-flex items-center text-sm font-medium text-accent group-hover:translate-x-1 transition-transform">
-                  Learn more &rarr;
-                </span>
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  href={item.href}
+                  className="block bg-white rounded-2xl border border-foreground/[0.06] p-8 group transition-colors hover:border-foreground/[0.12]"
+                >
+                  <span className="flex items-center gap-2 mb-3">
+                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
+                    <span className="text-[11px] font-medium tracking-wider uppercase" style={{ color }}>
+                      {item.label}
+                    </span>
+                  </span>
+                  <p className="text-sm text-muted leading-relaxed">{item.description}</p>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

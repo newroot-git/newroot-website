@@ -171,7 +171,7 @@ export default function PlatformShowcase() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-[140px] px-6 bg-surface">
+    <section className="py-[120px] px-6 bg-surface">
       <div className="max-w-[1280px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left — visual block with tabs */}

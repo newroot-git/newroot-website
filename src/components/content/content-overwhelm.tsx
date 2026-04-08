@@ -33,7 +33,7 @@ export default function ContentOverwhelm() {
   }, [resolved]);
 
   return (
-    <section className="relative pt-[140px] pb-[100px] px-6 overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative pt-[160px] pb-[120px] px-6 overflow-hidden min-h-[90vh] flex items-center">
       {/* Floating overwhelm elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {floatingComments.map((comment, i) => (

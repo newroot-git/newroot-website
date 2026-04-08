@@ -30,14 +30,13 @@ export default function SectionTiers({
   bg = "background",
 }: SectionTiersProps) {
   return (
-    <section className={`py-[140px] px-6 ${bg === "surface" ? "bg-surface" : ""}`}>
+    <section className={`py-[120px] px-6 ${bg === "surface" ? "bg-surface" : ""}`}>
       <div className="max-w-[1280px] mx-auto">
         <SectionHeader
           label={label}
           headline={headline}
           accentWord={accentWord}
           subtext={subtext}
-          align="center"
         />
 
         <div className="grid md:grid-cols-3 gap-3">

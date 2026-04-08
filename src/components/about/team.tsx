@@ -6,67 +6,61 @@ const team = [
   {
     name: "Josh Sharpe",
     role: "Creative Director & AI Architect",
-    description:
-      "Designs it, builds it, automates it. Josh has spent years at the intersection of creative direction and AI development. He builds with AI every day — not selling theory, selling practice. Every site, every piece of content, every automation comes through his hands.",
+    description: "Designs it, builds it, automates it. Years at the intersection of creative direction and AI development. Every site, every piece of content, every automation comes through his hands.",
     initial: "J",
   },
   {
     name: "Conor",
     role: "Business Director & Operations",
-    description:
-      "Finds the clients, runs the business, closes the deals. Conor handles the business side so Josh can focus on delivery. Finance, legal, sales, operations — the engine that keeps the studio running.",
+    description: "Finds the clients, runs the business, closes the deals. Finance, legal, sales, operations — the engine that keeps the studio running.",
     initial: "C",
   },
 ];
 
 export default function Team() {
   return (
-    <section className="py-[140px] px-6 bg-surface">
+    <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4"
-        >
-          The team
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-display text-[clamp(36px,4vw,56px)] leading-[1.1] max-w-[500px] mb-16"
-        >
-          Small team. Big{" "}
-          <span className="not-italic text-accent">output.</span>
-        </motion.h2>
+        <div className="text-center max-w-[700px] mx-auto mb-12">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
+          >
+            The team
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em]"
+          >
+            Small team. Big{" "}
+            <span className="font-display italic font-normal text-accent">output.</span>
+          </motion.h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 max-w-[800px] mx-auto">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-background rounded-2xl border border-foreground/[0.04] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-8"
+              transition={{ delay: i * 0.08 }}
+              className="bg-white rounded-2xl border border-foreground/[0.06] p-8"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent">
-                    {member.initial}
-                  </span>
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center">
+                  <span className="text-xl font-bold text-accent">{member.initial}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-accent font-medium">
-                    {member.role}
-                  </p>
+                  <h3 className="font-semibold text-foreground">{member.name}</h3>
+                  <p className="text-sm text-accent">{member.role}</p>
                 </div>
               </div>
-              <p className="text-muted leading-relaxed">{member.description}</p>
+              <p className="text-sm text-muted leading-relaxed">{member.description}</p>
             </motion.div>
           ))}
         </div>

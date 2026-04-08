@@ -23,7 +23,7 @@ export default function CompoundingEffect() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-[140px] px-6 bg-[#22C55E] overflow-hidden" ref={ref}>
+    <section className="relative py-[120px] px-6 bg-[#22C55E] overflow-hidden" ref={ref}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/[0.04] blur-[100px]" />
       </div>

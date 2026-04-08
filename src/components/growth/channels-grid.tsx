@@ -44,7 +44,7 @@ const channels = [
 
 export default function ChannelsGrid() {
   return (
-    <section className="py-[140px] px-6">
+    <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
         <SectionHeader
           label="Channels"
@@ -53,16 +53,15 @@ export default function ChannelsGrid() {
           subtext="Most businesses are only visible in one or two places. Your customers are everywhere — you should be too."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {channels.map((channel, i) => (
             <motion.div
               key={channel.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4 }}
-              className="bg-background rounded-2xl border border-foreground/[0.04] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-7"
+              transition={{ delay: i * 0.06 }}
+              className="bg-white rounded-2xl border border-foreground/[0.06] p-8"
             >
               <h3 className="text-lg font-semibold mb-2">{channel.name}</h3>
               <p className="text-sm text-muted leading-relaxed mb-4">

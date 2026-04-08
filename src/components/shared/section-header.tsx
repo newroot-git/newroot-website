@@ -7,7 +7,6 @@ interface SectionHeaderProps {
   headline: string;
   accentWord?: string;
   subtext?: string;
-  align?: "center" | "left";
 }
 
 export default function SectionHeader({
@@ -15,16 +14,15 @@ export default function SectionHeader({
   headline,
   accentWord,
   subtext,
-  align = "left",
 }: SectionHeaderProps) {
   return (
-    <div className={`mb-16 ${align === "center" ? "text-center" : ""}`}>
+    <div className="text-center mb-16 max-w-[700px] mx-auto">
       {label && (
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4"
+          className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
         >
           {label}
         </motion.span>
@@ -33,9 +31,7 @@ export default function SectionHeader({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] ${
-          align === "center" ? "max-w-[650px] mx-auto" : "max-w-[650px]"
-        }`}
+        className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em]"
       >
         {headline}
         {accentWord && (
@@ -53,9 +49,7 @@ export default function SectionHeader({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className={`text-muted text-lg leading-relaxed mt-6 ${
-            align === "center" ? "max-w-[580px] mx-auto" : "max-w-[580px]"
-          }`}
+          className="text-muted text-lg leading-relaxed mt-5 max-w-[520px] mx-auto"
         >
           {subtext}
         </motion.p>

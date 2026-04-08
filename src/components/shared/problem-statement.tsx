@@ -16,13 +16,13 @@ export default function ProblemStatement({
   body,
 }: ProblemStatementProps) {
   return (
-    <section className="py-[140px] px-6">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="py-[120px] px-6">
+      <div className="max-w-[1280px] mx-auto text-center max-w-[700px]">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-sm font-medium text-accent tracking-wide block mb-4"
+          className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
         >
           {label}
         </motion.span>
@@ -30,7 +30,7 @@ export default function ProblemStatement({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] max-w-[650px] mb-8"
+          className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
         >
           {headline}
           {accentWord && (
@@ -47,7 +47,7 @@ export default function ProblemStatement({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-muted text-lg leading-relaxed max-w-[580px]"
+          className="text-muted text-lg leading-relaxed max-w-[520px] mx-auto"
         >
           {body}
         </motion.p>

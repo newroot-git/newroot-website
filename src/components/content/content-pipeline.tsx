@@ -11,7 +11,7 @@ const steps = [
 
 export default function ContentPipeline() {
   return (
-    <section className="py-[140px] px-6">
+    <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-16">
           <motion.span
