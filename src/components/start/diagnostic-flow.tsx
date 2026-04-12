@@ -219,7 +219,7 @@ export default function DiagnosticFlow() {
       {/* Top bar */}
       <div className="h-[72px] flex items-center justify-between px-6 md:px-12">
         <Link href="/" className="inline-flex items-center">
-          <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
+          <img src="/newroot-logo.png" alt="Newroot" className="h-10" />
         </Link>
         <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
           I&apos;ll explore instead

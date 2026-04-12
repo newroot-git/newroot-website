@@ -60,7 +60,7 @@ export default function Navigation() {
       <div className="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* Logo with element dots */}
         <Link href="/" className="inline-flex items-center">
-          <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
+          <img src="/newroot-logo.png" alt="Newroot" className="h-10" />
         </Link>
 
         {/* Desktop links */}

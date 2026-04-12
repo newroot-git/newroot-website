@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center">
-              <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
+              <img src="/newroot-logo.png" alt="Newroot" className="h-9" />
             </Link>
             <p className="text-muted text-sm leading-relaxed max-w-sm mt-3">
               Every route to growth.
