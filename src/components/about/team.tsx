@@ -25,7 +25,7 @@ export default function Team() {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
           >
             The team
@@ -33,7 +33,7 @@ export default function Team() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em]"
           >
             Small team. Big{" "}
@@ -47,7 +47,7 @@ export default function Team() {
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.08 }}
               className="bg-white rounded-2xl border border-foreground/[0.06] p-8"
             >

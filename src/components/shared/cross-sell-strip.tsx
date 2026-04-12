@@ -27,7 +27,7 @@ export default function CrossSellStrip({ headline, items }: CrossSellStripProps)
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
           >
             The bigger picture
@@ -35,7 +35,7 @@ export default function CrossSellStrip({ headline, items }: CrossSellStripProps)
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(28px,3.5vw,40px)] leading-[1.15] tracking-[-0.02em]"
           >
             {headline}
@@ -50,7 +50,7 @@ export default function CrossSellStrip({ headline, items }: CrossSellStripProps)
                 key={item.href}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
               >
                 <Link

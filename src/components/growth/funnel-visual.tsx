@@ -19,7 +19,7 @@ export default function FunnelVisual() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
             >
               The funnel
@@ -27,7 +27,7 @@ export default function FunnelVisual() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
             >
               Where are you losing{" "}
@@ -36,7 +36,7 @@ export default function FunnelVisual() {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
               className="text-muted text-lg leading-relaxed mb-8"
             >
@@ -60,7 +60,7 @@ export default function FunnelVisual() {
                   key={stage.label}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: i * 0.1 }}
                 >
                   <div className="flex items-center justify-between mb-1">
@@ -71,7 +71,7 @@ export default function FunnelVisual() {
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: stage.width }}
-                      viewport={{ once: true }}
+                      viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.8, delay: i * 0.1 + 0.2 }}
                       className="h-full rounded-lg bg-accent/20"
                     />

@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-const paletteColors = ["#FE6237", "#FFB62E", "#7CC3FF", "#4164FF"];
-
 const footerLinks = {
   Services: [
     { label: "Websites", href: "/websites" },
@@ -27,18 +25,12 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
-            <Link href="/" className="font-display text-xl">
-              Elemental Studios
+            <Link href="/" className="inline-flex items-center">
+              <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
             </Link>
-            <p className="text-muted text-sm leading-relaxed max-w-sm mb-4 mt-3">
-              Websites, content, and AI solutions. Built to convert, delivered
-              in days.
+            <p className="text-muted text-sm leading-relaxed max-w-sm mt-3">
+              Every route to growth.
             </p>
-            <div className="flex h-[3px] w-16">
-              {paletteColors.map((c, i) => (
-                <span key={i} className="flex-1" style={{ backgroundColor: c }} />
-              ))}
-            </div>
           </div>
 
           {Object.entries(footerLinks).map(([title, links]) => (
@@ -63,10 +55,10 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-foreground/[0.06]">
           <p className="text-xs text-subtle">
-            &copy; {new Date().getFullYear()} Elemental Studios. All rights
+            &copy; {new Date().getFullYear()} Newroot. All rights
             reserved.
           </p>
-          <p className="text-xs text-subtle">The foundations of growth.</p>
+          <p className="text-xs text-subtle">Every route to growth.</p>
         </div>
       </div>
     </footer>

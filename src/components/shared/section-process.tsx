@@ -34,7 +34,7 @@ export default function SectionProcess({
               key={step.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1 }}
               className="bg-white rounded-2xl border border-foreground/[0.06] p-8 text-center"
             >

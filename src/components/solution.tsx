@@ -90,7 +90,7 @@ function BeforeAfter() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-100px" }}
       onViewportEnter={() => { setTimeout(() => setHasTriggered(true), 600); }}
       className="relative max-w-[780px] mx-auto mb-12"
     >
@@ -225,10 +225,10 @@ export default function Solution() {
     <section className="relative py-[140px] px-6 bg-[#0055FF] overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute -left-20 -top-10 w-[600px] h-[600px]" viewBox="0 0 500 500" fill="none">
-          <motion.path d="M50,250 C120,80 350,80 400,250 C450,420 300,450 200,350" stroke="white" strokeWidth="35" strokeLinecap="round" fill="none" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 0.1 }} viewport={{ once: true }} transition={{ duration: 2.5, ease: "easeInOut" }} />
+          <motion.path d="M50,250 C120,80 350,80 400,250 C450,420 300,450 200,350" stroke="white" strokeWidth="35" strokeLinecap="round" fill="none" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 0.1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 2.5, ease: "easeInOut" }} />
         </svg>
         <svg className="absolute -right-16 -bottom-16 w-[450px] h-[450px]" viewBox="0 0 400 400" fill="none">
-          <motion.path d="M350,50 C200,100 300,300 50,350" stroke="white" strokeWidth="25" strokeLinecap="round" fill="none" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 0.08 }} viewport={{ once: true }} transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }} />
+          <motion.path d="M350,50 C200,100 300,300 50,350" stroke="white" strokeWidth="25" strokeLinecap="round" fill="none" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 0.08 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }} />
         </svg>
         {[
           { top: "12%", right: "18%", size: "w-5 h-5", delay: 0 },
@@ -245,19 +245,19 @@ export default function Solution() {
       </div>
 
       <div className="max-w-[1280px] mx-auto relative z-10 text-center">
-        <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-white/40 text-sm font-medium tracking-wide mb-6">The fix</motion.p>
-        <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-[clamp(38px,5.5vw,68px)] leading-[1.05] text-white mb-8 max-w-[800px] mx-auto">
+        <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }} className="text-white/40 text-sm font-medium tracking-wide mb-6">The fix</motion.p>
+        <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="font-display text-[clamp(38px,5.5vw,68px)] leading-[1.05] text-white mb-8 max-w-[800px] mx-auto">
           This is where{" "}
           <motion.span animate={{ rotate: [0, 10, -5, 0] }} transition={{ duration: 4, repeat: Infinity }} className="inline-flex items-center justify-center w-[0.75em] h-[0.75em] rounded-xl bg-white/20 align-middle mx-1">
             <svg viewBox="0 0 12 12" className="w-[0.4em] h-[0.4em] text-white" fill="currentColor"><path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5Z" /></svg>
           </motion.span>{" "}
           we come in
         </motion.h2>
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-xl text-white/75 max-w-[580px] mx-auto mb-10 leading-relaxed">
+        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.1 }} className="text-xl text-white/75 max-w-[580px] mx-auto mb-10 leading-relaxed">
           Websites, content, and AI solutions — built by two people who actually give a damn. One partner. Every piece your business needs.
         </motion.p>
         <BeforeAfter />
-        <motion.a initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} href="#book" className="inline-flex h-12 px-7 items-center justify-center rounded-lg bg-white text-[#0055FF] font-medium hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.2)]">
+        <motion.a initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.3 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} href="#book" className="inline-flex h-12 px-7 items-center justify-center rounded-lg bg-white text-[#0055FF] font-medium hover:bg-white/90 transition-colors shadow-[0_4px_20px_rgba(255,255,255,0.2)]">
           Book a call
         </motion.a>
       </div>

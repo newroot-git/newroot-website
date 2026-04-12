@@ -20,7 +20,7 @@ export default function SectionCTA({
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="font-sans font-bold text-[clamp(32px,4.5vw,56px)] leading-[1.1] tracking-[-0.025em] text-background max-w-[650px] mx-auto mb-5"
         >
           {headline}{" "}
@@ -32,7 +32,7 @@ export default function SectionCTA({
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.1 }}
           className="text-background/50 text-lg max-w-[400px] mx-auto mb-10"
         >
@@ -42,7 +42,7 @@ export default function SectionCTA({
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.2 }}
         >
           <BookCallButton size="large" />

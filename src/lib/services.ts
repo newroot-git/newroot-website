@@ -52,6 +52,6 @@ export const services: Service[] = [
   },
 ];
 
-// Hub/Elemental = Blue (Water)
+// Hub/Newroot = Blue (the mainline)
 export const hubColor = "#0055FF";
 export const hubColorLight = "#EBF2FF";

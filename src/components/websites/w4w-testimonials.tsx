@@ -14,14 +14,14 @@ export default function W4wTestimonials() {
       <div className="max-w-[1280px] mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }}
               className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4">Results</motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
               className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] mb-8">
               Don&apos;t take our{" "}<span className="font-display italic font-normal">word</span>{" "}for it
             </motion.h2>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.15 }}
               className="grid grid-cols-2 gap-3">
               {[
                 { value: "47%", label: "More conversions", client: "TechFlow" },
@@ -29,7 +29,7 @@ export default function W4wTestimonials() {
                 { value: "20%", label: "More time on site", client: "Apex Legal" },
                 { value: "50+", label: "Sites shipped", client: "And counting" },
               ].map((stat, i) => (
-                <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.07 }}
+                <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.2 + i * 0.07 }}
                   className="bg-background rounded-2xl border border-foreground/[0.04] p-4">
                   <div className="text-[28px] font-bold text-accent leading-none mb-1">{stat.value}</div>
                   <div className="text-sm font-medium text-foreground">{stat.label}</div>
@@ -41,7 +41,7 @@ export default function W4wTestimonials() {
 
           <div className="space-y-3">
             {quotes.map((q, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 + i * 0.1, type: "spring", stiffness: 100 }} whileHover={{ y: -2 }}
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.15 + i * 0.1, type: "spring", stiffness: 100 }} whileHover={{ y: -2 }}
                 className="bg-background rounded-2xl border border-foreground/[0.04] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-5">
                 <div className="flex mb-3">
                   {[...Array(5)].map((_, j) => (

@@ -11,7 +11,7 @@ import CrossSellStrip from "@/components/shared/cross-sell-strip";
 import SectionCTA from "@/components/shared/section-cta";
 
 export const metadata: Metadata = {
-  title: "AI & Automation — Elemental Studios",
+  title: "AI & Automation — Newroot",
   description:
     "Custom CRMs, workflow automation, AI assistants, and internal tools. We audit your business, find the bottlenecks, and build the fix.",
 };

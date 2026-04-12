@@ -137,13 +137,13 @@ export default function W4wHero() {
         {/* Portfolio preview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { bg: "from-orange-50 via-orange-100 to-red-200", label: "SaaS Platform" },
-            { bg: "from-violet-50 via-violet-100 to-purple-200", label: "E-commerce" },
-            { bg: "from-lime-50 via-lime-100 to-yellow-200", label: "Agency Site" },
-            { bg: "from-amber-50 via-amber-100 to-orange-200", label: "Portfolio" },
+            { bg: "bg-[#E05A2D]", label: "SaaS Platform" },
+            { bg: "bg-[#E8734D]", label: "E-commerce" },
+            { bg: "bg-[#C74B20]", label: "Agency Site" },
+            { bg: "bg-[#F09070]", label: "Portfolio" },
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 50, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.6, delay: 1.0 + i * 0.12, type: "spring", stiffness: 100 }} whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-              className={`bg-gradient-to-br ${item.bg} aspect-[4/3] rounded-2xl overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300`}>
+              className={`${item.bg} aspect-[4/3] rounded-2xl overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300`}>
               <div className="absolute top-3 left-3 flex gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-black/10" /><span className="w-2 h-2 rounded-full bg-black/10" /><span className="w-2 h-2 rounded-full bg-black/10" />
               </div>

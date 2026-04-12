@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ServiceTheme from "@/components/service-theme";
 import ContentOverwhelm from "@/components/content/content-overwhelm";
+import ContentTransition from "@/components/content/content-transition";
 import WhyContent from "@/components/content/why-content";
 import PlatformShowcase from "@/components/content/platform-showcase";
 import CompoundingEffect from "@/components/content/compounding-effect";
@@ -10,7 +11,7 @@ import CrossSellStrip from "@/components/shared/cross-sell-strip";
 import SectionCTA from "@/components/shared/section-cta";
 
 export const metadata: Metadata = {
-  title: "Content — Elemental Studios",
+  title: "Content — Newroot",
   description:
     "Consistent, quality content across every channel. AI-powered production, directed by a Creative Director. Show up every day without the overhead.",
 };
@@ -19,6 +20,7 @@ export default function ContentPage() {
   return (
     <ServiceTheme color="#22C55E" colorLight="#ECFDF5" colorDark="#16A34A">
       <ContentOverwhelm />
+      <ContentTransition />
       <WhyContent />
       <PlatformShowcase />
       <CompoundingEffect />

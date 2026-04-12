@@ -23,7 +23,7 @@ const problems = [
       <div className="relative w-full h-32 mb-4 flex items-center justify-center">
         <svg className="w-24 h-24" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" stroke="#F0F0F2" strokeWidth="8" fill="none" />
-          <motion.circle cx="50" cy="50" r="40" stroke="#EF4444" strokeWidth="8" fill="none" strokeLinecap="round" strokeDasharray="251" initial={{ strokeDashoffset: 251 }} whileInView={{ strokeDashoffset: 60 }} viewport={{ once: true }} transition={{ duration: 2, ease: "easeOut" }} transform="rotate(-90 50 50)" />
+          <motion.circle cx="50" cy="50" r="40" stroke="#EF4444" strokeWidth="8" fill="none" strokeLinecap="round" strokeDasharray="251" initial={{ strokeDashoffset: 251 }} whileInView={{ strokeDashoffset: 60 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 2, ease: "easeOut" }} transform="rotate(-90 50 50)" />
           <text x="50" y="48" textAnchor="middle" className="fill-foreground text-lg font-bold" fontSize="18">3s</text>
           <text x="50" y="62" textAnchor="middle" className="fill-muted" fontSize="8">load time</text>
         </svg>
@@ -35,9 +35,9 @@ const problems = [
     visual: (
       <div className="relative w-full h-32 mb-4 flex items-end justify-center gap-2 px-4 pb-2">
         {[40, 55, 45, 65, 50, 70, 60, 75].map((h, i) => (
-          <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }} className="flex-1 rounded-t-md bg-gradient-to-t from-accent/20 to-accent/5" />
+          <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${h}%` }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.5, delay: i * 0.08 }} className="flex-1 rounded-t-md bg-gradient-to-t from-accent/20 to-accent/5" />
         ))}
-        <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.5 }} className="absolute bottom-[35%] left-4 right-4 h-[2px] bg-red-400 origin-left" />
+        <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 1, delay: 0.5 }} className="absolute bottom-[35%] left-4 right-4 h-[2px] bg-red-400 origin-left" />
       </div>
     ),
   },
@@ -59,13 +59,13 @@ export default function Problems() {
   return (
     <section className="py-[140px] px-6">
       <div className="max-w-[1280px] mx-auto">
-        <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-sm font-medium text-accent tracking-wide block mb-4">Sound familiar?</motion.span>
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] max-w-[650px] mb-16">
+        <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }} className="text-sm font-medium text-accent tracking-wide block mb-4">Sound familiar?</motion.span>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] max-w-[650px] mb-16">
           Is your business{" "}<span className="font-display italic font-normal">working against you?</span>
         </motion.h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {problems.map((problem, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} whileHover={{ y: -4 }}
+            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: i * 0.1 }} whileHover={{ y: -4 }}
               className="p-6 bg-background rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.06)] border border-black/[0.04] overflow-hidden">
               {problem.visual}
               <h3 className="text-lg font-semibold mb-1">{problem.title}</h3>

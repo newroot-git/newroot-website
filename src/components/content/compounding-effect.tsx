@@ -34,7 +34,7 @@ export default function CompoundingEffect() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="text-white/50 text-sm font-medium tracking-wide mb-6"
             >
               The compounding effect
@@ -42,7 +42,7 @@ export default function CompoundingEffect() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="font-sans font-bold text-[clamp(36px,5vw,56px)] leading-[1.05] text-white mb-8"
             >
               Content doesn&apos;t add up.
@@ -52,7 +52,7 @@ export default function CompoundingEffect() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
               className="text-lg text-white leading-relaxed mb-4"
             >
@@ -61,7 +61,7 @@ export default function CompoundingEffect() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.2 }}
               className="text-white/80 leading-relaxed mb-8"
             >
@@ -79,7 +79,7 @@ export default function CompoundingEffect() {
                   key={stat.value}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="text-center"
                 >
@@ -95,7 +95,7 @@ export default function CompoundingEffect() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
             className="rounded-2xl border border-white/15 bg-white/[0.06] p-6"
           >

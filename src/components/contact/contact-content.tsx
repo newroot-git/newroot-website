@@ -60,10 +60,10 @@ export default function ContactContent() {
                   Email
                 </span>
                 <a
-                  href="mailto:hello@elementalstudios.com"
+                  href="mailto:hello@newroot.io"
                   className="text-foreground font-medium hover:text-accent transition-colors"
                 >
-                  hello@elementalstudios.com
+                  hello@newroot.io
                 </a>
               </div>
 

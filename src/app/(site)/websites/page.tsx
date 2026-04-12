@@ -11,7 +11,7 @@ import W4wTestimonials from "@/components/websites/w4w-testimonials";
 import W4wCallToAction from "@/components/websites/w4w-call-to-action";
 
 export const metadata: Metadata = {
-  title: "Websites — Elemental Studios",
+  title: "Websites — Newroot",
   description: "Custom websites built in days, not months. AI-accelerated. Creative Director quality. Built to convert.",
 };
 

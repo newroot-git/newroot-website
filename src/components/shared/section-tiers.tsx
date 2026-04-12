@@ -45,7 +45,7 @@ export default function SectionTiers({
               key={tier.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
               className={`rounded-2xl p-7 ${

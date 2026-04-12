@@ -321,7 +321,7 @@ export default function PlatformEcosystem() {
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4"
         >
           The ecosystem
@@ -329,7 +329,7 @@ export default function PlatformEcosystem() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="font-sans font-bold text-[clamp(36px,4vw,56px)] leading-[1.1] tracking-[-0.025em] max-w-[650px] mb-6"
         >
           One piece of content.{" "}
@@ -340,7 +340,7 @@ export default function PlatformEcosystem() {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.1 }}
           className="text-muted text-lg leading-relaxed max-w-[520px] mb-12"
         >
@@ -357,7 +357,7 @@ export default function PlatformEcosystem() {
                 key={platform.name}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: i * 0.08 }}
                 onClick={() => {
                   setActivePlatform(i);

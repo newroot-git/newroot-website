@@ -11,7 +11,7 @@ export default function OnboardingEntry() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(28px,4vw,40px)] leading-[1.1] tracking-[-0.025em] mb-4"
           >
             60 seconds. No email.{" "}
@@ -20,7 +20,7 @@ export default function OnboardingEntry() {
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
             className="text-muted text-lg mb-8 leading-relaxed"
           >
@@ -30,7 +30,7 @@ export default function OnboardingEntry() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
             <Link

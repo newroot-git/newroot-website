@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import DiagnosisCard from "./diagnosis-card";
-import { services } from "@/lib/services";
 
 // ── Types ──────────────────────────────────────────────────
 interface DiagnosticState {
@@ -148,7 +147,7 @@ function computeDiagnosis(state: DiagnosticState): Diagnosis {
 }
 
 // ── Component ──────────────────────────────────────────────
-const STORAGE_KEY = "elemental-diagnostic-v3";
+const STORAGE_KEY = "newroot-diagnostic-v1";
 const TOTAL_STEPS = 8; // intro + 6 questions + results
 
 export default function DiagnosticFlow() {
@@ -219,13 +218,8 @@ export default function DiagnosticFlow() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Top bar */}
       <div className="h-[72px] flex items-center justify-between px-6 md:px-12">
-        <Link href="/" className="text-[17px] font-semibold tracking-tight text-foreground">
-          Elemental
-          <span className="inline-flex gap-[3px] ml-[2px] mb-[3px] align-baseline">
-            {services.map((s, i) => (
-              <span key={i} className="w-[5px] h-[5px] rounded-full inline-block" style={{ backgroundColor: s.color }} />
-            ))}
-          </span>
+        <Link href="/" className="inline-flex items-center">
+          <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
         </Link>
         <Link href="/" className="text-sm text-muted hover:text-foreground transition-colors">
           I&apos;ll explore instead

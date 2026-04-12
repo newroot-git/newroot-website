@@ -6,15 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = ["All", "Web Design", "Development", "Landing Pages", "Branding", "Strategy"];
 
 const works = [
-  { title: "SaaS Dashboard Redesign", category: "Web Design", bg: "bg-gradient-to-br from-blue-500 to-blue-700", tall: true },
-  { title: "E-commerce Platform", category: "Development", bg: "bg-gradient-to-br from-emerald-500 to-emerald-700", tall: false },
-  { title: "Product Launch Page", category: "Landing Pages", bg: "bg-gradient-to-br from-amber-500 to-amber-700", tall: false },
-  { title: "Fintech Brand Identity", category: "Branding", bg: "bg-gradient-to-br from-violet-500 to-violet-700", tall: true },
-  { title: "Startup Marketing Site", category: "Web Design", bg: "bg-gradient-to-br from-rose-500 to-rose-700", tall: false },
-  { title: "Conversion Audit", category: "Strategy", bg: "bg-gradient-to-br from-cyan-500 to-cyan-700", tall: false },
-  { title: "Agency Portfolio", category: "Web Design", bg: "bg-gradient-to-br from-lime-500 to-lime-700", tall: false },
-  { title: "SaaS Landing Page", category: "Landing Pages", bg: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-700", tall: true },
-  { title: "Health App Website", category: "Development", bg: "bg-gradient-to-br from-teal-500 to-teal-700", tall: false },
+  { title: "SaaS Dashboard Redesign", category: "Web Design", bg: "bg-[#E05A2D]", tall: true },
+  { title: "E-commerce Platform", category: "Development", bg: "bg-[#E8734D]", tall: false },
+  { title: "Product Launch Page", category: "Landing Pages", bg: "bg-[#C74B20]", tall: false },
+  { title: "Fintech Brand Identity", category: "Branding", bg: "bg-[#F09070]", tall: true },
+  { title: "Startup Marketing Site", category: "Web Design", bg: "bg-[#D4602F]", tall: false },
+  { title: "Conversion Audit", category: "Strategy", bg: "bg-[#E8734D]", tall: false },
+  { title: "Agency Portfolio", category: "Web Design", bg: "bg-[#C74B20]", tall: false },
+  { title: "SaaS Landing Page", category: "Landing Pages", bg: "bg-[#E05A2D]", tall: true },
+  { title: "Health App Website", category: "Development", bg: "bg-[#F09070]", tall: false },
 ];
 
 export default function W4wServices() {
@@ -26,21 +26,21 @@ export default function W4wServices() {
       <div className="max-w-[1280px] mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start mb-12">
           <div>
-            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }}
               className="text-[11px] font-medium text-muted tracking-[0.15em] uppercase block mb-4">What we do</motion.span>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }}
               className="font-display text-[clamp(36px,4vw,56px)] leading-[1.1]">
               Everything your website needs
             </motion.h2>
           </div>
-          <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+          <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: 0.1 }}
             className="text-muted text-lg leading-relaxed md:pt-12">
             Design, development, strategy, and ongoing support. We handle the full stack so you can focus on running your business.
           </motion.p>
         </div>
 
         {/* Filter pills */}
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="flex flex-wrap gap-2 mb-10">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }} className="flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => (
             <button key={cat} onClick={() => setActive(cat)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${

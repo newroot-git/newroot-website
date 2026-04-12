@@ -24,6 +24,7 @@
   --color-blue: var(--blue);
   --font-sans: var(--font-plus-jakarta);
   --font-display: var(--font-instrument-serif);
+  --font-hand: var(--font-caveat);
 }
 
 html {

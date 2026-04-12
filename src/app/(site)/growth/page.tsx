@@ -9,7 +9,7 @@ import CrossSellStrip from "@/components/shared/cross-sell-strip";
 import SectionCTA from "@/components/shared/section-cta";
 
 export const metadata: Metadata = {
-  title: "Marketing & Growth — Elemental Studios",
+  title: "Marketing & Growth — Newroot",
   description:
     "Google Ads, Meta Ads, SEO, email marketing, LinkedIn, WhatsApp — all connected to your website and content. Every channel. One strategy.",
 };

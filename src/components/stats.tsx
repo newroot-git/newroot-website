@@ -30,7 +30,7 @@ export default function Stats() {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
           >
             Track record
@@ -38,7 +38,7 @@ export default function Stats() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em]"
           >
             Results that speak for{" "}
@@ -56,7 +56,7 @@ export default function Stats() {
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1 }}
               className="bg-white rounded-2xl border border-foreground/[0.06] p-8 text-center"
             >

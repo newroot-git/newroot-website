@@ -11,7 +11,7 @@ export default function AIPhilosophy() {
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
             >
               Our philosophy
@@ -19,7 +19,7 @@ export default function AIPhilosophy() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
             >
               We don&apos;t ask AI.
@@ -33,7 +33,7 @@ export default function AIPhilosophy() {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
               className="text-muted text-lg leading-relaxed"
             >
@@ -67,7 +67,7 @@ export default function AIPhilosophy() {
                 key={example.label}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.1 + i * 0.08 }}
                 className="bg-white rounded-2xl border border-foreground/[0.06] p-6"
               >

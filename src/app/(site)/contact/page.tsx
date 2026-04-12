@@ -3,7 +3,7 @@ import ServiceTheme from "@/components/service-theme";
 import ContactContent from "@/components/contact/contact-content";
 
 export const metadata: Metadata = {
-  title: "Contact — Elemental Studios",
+  title: "Contact — Newroot",
   description:
     "No pitch. No pressure. Just an honest conversation about where you are and whether we can help.",
 };

@@ -13,7 +13,7 @@ export default function Philosophy() {
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
               >
                 Our philosophy
@@ -21,7 +21,7 @@ export default function Philosophy() {
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
               >
                 We&apos;re the doctor,{" "}
@@ -32,7 +32,7 @@ export default function Philosophy() {
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.1 }}
                 className="text-muted text-lg leading-relaxed"
               >
@@ -52,7 +52,7 @@ export default function Philosophy() {
                   key={item.title}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-100px" }}
                   transition={{ delay: 0.1 + i * 0.08 }}
                   className="bg-white rounded-2xl border border-foreground/[0.06] p-6"
                 >
@@ -71,7 +71,7 @@ export default function Philosophy() {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-background/30 text-[11px] font-medium tracking-[0.15em] uppercase block mb-4"
           >
             On AI
@@ -79,7 +79,7 @@ export default function Philosophy() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(32px,4.5vw,56px)] leading-[1.1] text-background mb-6"
           >
             We don&apos;t ask AI. We{" "}
@@ -88,7 +88,7 @@ export default function Philosophy() {
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
             className="text-background/60 text-lg leading-relaxed"
           >
@@ -99,36 +99,36 @@ export default function Philosophy() {
         </div>
       </section>
 
-      {/* Why Elemental */}
+      {/* Why Newroot */}
       <section className="py-[120px] px-6">
         <div className="max-w-[1280px] mx-auto text-center max-w-[600px]">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
           >
-            Why &ldquo;Elemental&rdquo;
+            Why &ldquo;Newroot&rdquo;
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-5"
           >
-            The foundations of{" "}
+            Every route to{" "}
             <span className="font-display italic font-normal text-accent">growth.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
             className="text-muted text-lg leading-relaxed"
           >
-            Elemental means fundamental. Your website, your content, your
-            operations, your growth channels — when the foundations are right,
-            growth takes care of itself.
+            New roots for your business. New routes to your customers. Your
+            website, your content, your growth channels — we build the
+            foundations so growth takes care of itself.
           </motion.p>
         </div>
       </section>

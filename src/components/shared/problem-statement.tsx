@@ -21,7 +21,7 @@ export default function ProblemStatement({
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
         >
           {label}
@@ -29,7 +29,7 @@ export default function ProblemStatement({
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
         >
           {headline}
@@ -45,7 +45,7 @@ export default function ProblemStatement({
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: 0.1 }}
           className="text-muted text-lg leading-relaxed max-w-[520px] mx-auto"
         >

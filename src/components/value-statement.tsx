@@ -7,20 +7,20 @@ export default function ValueStatement() {
   return (
     <section className="py-[120px] px-6">
       <div className="max-w-[1280px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="text-[11px] font-medium text-accent tracking-[0.15em] uppercase block mb-4"
             >
-              Why Elemental
+              Why Newroot
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               className="font-sans font-bold text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-0.025em] mb-6"
             >
               We don&apos;t sell you a package. We find the{" "}
@@ -29,7 +29,7 @@ export default function ValueStatement() {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.1 }}
               className="text-muted text-lg leading-relaxed"
             >
@@ -44,7 +44,7 @@ export default function ValueStatement() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
             <BusinessDiagnostic />

@@ -7,8 +7,6 @@ import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/navigation";
 import { services } from "@/lib/services";
 
-const dotColors = services.map((s) => ({ color: s.color, href: s.href }));
-
 // Map pathname to its service color
 function getActiveServiceColor(pathname: string): string | null {
   const service = services.find((s) => s.href === pathname);
@@ -61,24 +59,8 @@ export default function Navigation() {
     >
       <div className="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* Logo with element dots */}
-        <Link href="/" className="inline-flex items-baseline text-[17px] font-semibold tracking-tight text-foreground">
-          <span>Elemental</span>
-          <span className="inline-flex gap-[3px] ml-[2px] self-baseline mb-[3px]">
-            {dotColors.map((dot, i) => (
-              <motion.span
-                key={i}
-                className="w-[5px] h-[5px] rounded-full transition-all duration-300 inline-block"
-                style={{
-                  backgroundColor: isServicePage
-                    ? dot.href === pathname ? dot.color : "#D1CDC6"
-                    : dot.color,
-                }}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 + i * 0.05, type: "spring", stiffness: 400 }}
-              />
-            ))}
-          </span>
+        <Link href="/" className="inline-flex items-center">
+          <img src="/newroot-logo.png" alt="Newroot" className="h-7" />
         </Link>
 
         {/* Desktop links */}

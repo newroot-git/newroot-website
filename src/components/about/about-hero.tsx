@@ -39,7 +39,7 @@ export default function AboutHero() {
             transition={{ delay: 0.15 }}
             className="text-lg text-muted leading-relaxed max-w-[520px] mx-auto"
           >
-            Elemental Studios is Josh Sharpe and Conor. A Creative Director and
+            Newroot is Josh Sharpe and Conor. A Creative Director and
             a Business Director who got tired of watching businesses get burned
             by agencies that overpromise and underdeliver.
           </motion.p>

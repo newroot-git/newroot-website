@@ -20,8 +20,8 @@ export default function SocialProof() {
   return (
     <section className="py-[120px] px-6 bg-surface overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
-        <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-sm font-medium text-accent tracking-wide block mb-4">Clients</motion.span>
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-[clamp(36px,4vw,56px)] leading-[1.1] max-w-[600px] mb-14">
+        <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-100px" }} className="text-sm font-medium text-accent tracking-wide block mb-4">Clients</motion.span>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} className="font-display text-[clamp(36px,4vw,56px)] leading-[1.1] max-w-[600px] mb-14">
           We build for{" "}
           <span className="inline-flex items-center justify-center w-[0.8em] h-[0.8em] rounded-xl bg-accent/10 align-middle mx-0.5">
             <svg className="w-[0.4em] h-[0.4em] text-accent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
@@ -34,7 +34,7 @@ export default function SocialProof() {
             { target: 2, prefix: "$", suffix: "M+", label: "Client revenue generated", accent: false },
             { target: 7, prefix: "<", suffix: " days", label: "Average delivery", accent: false },
           ].map((stat, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.12, type: "spring", stiffness: 100 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300 } }}
+            <motion.div key={i} initial={{ opacity: 0, y: 30, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true, margin: "-100px" }} transition={{ delay: i * 0.12, type: "spring", stiffness: 100 }} whileHover={{ y: -4, transition: { type: "spring", stiffness: 300 } }}
               className={`p-8 rounded-2xl text-center ${stat.accent ? "bg-[#0055FF] text-white" : "bg-background shadow-[0_2px_16px_rgba(0,0,0,0.06)] border border-black/[0.04]"}`}>
               <div className={`text-[clamp(36px,5vw,56px)] font-bold leading-none mb-2 ${stat.accent ? "" : "text-foreground"}`}>
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} prefix={stat.prefix || ""} />

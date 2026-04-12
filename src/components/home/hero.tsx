@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
-import BookCallButton from "@/components/ui/book-call-button";
 import Link from "next/link";
 
 export default function HomeHero() {
