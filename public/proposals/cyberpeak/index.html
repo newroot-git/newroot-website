@@ -337,66 +337,69 @@
     opacity: 0.5;
   }
 
-  /* Ad spend scale */
+  /* Ad spend visualizer */
   .adspend-panel {
     background: var(--white);
     border-radius: 16px;
     padding: 28px 24px;
   }
 
-  .adspend-scale { }
-
-  .adscale-row {
-    display: grid;
-    grid-template-columns: 90px 1fr auto;
-    gap: 14px;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--bg);
-  }
-  .adscale-row:last-child { border-bottom: none; }
-
-  .adscale-month {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .adscale-bar-wrap {
-    height: 8px;
+  /* Slider */
+  .spend-slider-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .spend-slider-label { font-size: 13px; font-weight: 600; color: var(--muted); }
+  .spend-val { font-size: 30px; font-weight: 800; color: var(--fg); letter-spacing: -0.03em; line-height: 1; }
+  input[type=range].spend-range {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 4px;
+    border-radius: 100px;
     background: var(--bg);
-    border-radius: 100px;
-    overflow: hidden;
+    outline: none; cursor: pointer;
+    margin: 0 0 6px;
   }
-  .adscale-bar {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 100px;
-    transition: width 0.3s ease;
+  input[type=range].spend-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--fg); cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   }
+  .spend-range-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--subtle); font-weight: 600; margin-bottom: 24px; }
 
-  .adscale-right { text-align: right; }
-  .adscale-total {
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--fg);
-    white-space: nowrap;
-    letter-spacing: -0.01em;
+  /* Breakdown bar */
+  .spend-bar-visual {
+    display: flex; height: 10px; border-radius: 100px;
+    overflow: hidden; margin: 14px 0 16px;
   }
-  .adscale-note {
-    font-size: 11px;
-    color: var(--subtle);
-    margin-top: 1px;
-    white-space: nowrap;
+  .spend-bar-fill { height: 100%; transition: width 0.15s ease; }
+  .spend-bar-fill.ads { background: var(--accent); }
+  .spend-bar-fill.mgmt { background: var(--blue); opacity: 0.35; }
+
+  .spend-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+  .spend-row-label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .spend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .spend-dot.ads { background: var(--accent); }
+  .spend-dot.mgmt { background: var(--blue); opacity: 0.7; }
+  .spend-row-amount { font-size: 14px; font-weight: 700; }
+  .spend-row-amount.ads { color: var(--accent); }
+  .spend-row-amount.mgmt { color: var(--blue); }
+
+  .spend-total-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 14px; border-top: 1px solid var(--bg); margin-top: 6px;
   }
+  .spend-total-label { font-size: 13px; font-weight: 600; color: var(--muted); }
+  .spend-total-amount { font-size: 24px; font-weight: 800; color: var(--fg); letter-spacing: -0.02em; }
+
+  /* Leads estimate */
+  .spend-leads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .leads-stat { background: var(--bg); border-radius: 10px; padding: 12px 10px; text-align: center; }
+  .leads-val { font-size: 18px; font-weight: 800; color: var(--fg); letter-spacing: -0.02em; line-height: 1; }
+  .leads-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--subtle); margin-top: 4px; }
 
   .adspend-callout {
     background: var(--bg);
     border-radius: 10px;
     padding: 14px 16px;
-    margin-top: 20px;
+    margin-top: 16px;
     font-size: 13px;
     color: var(--muted);
     line-height: 1.5;
@@ -803,51 +806,48 @@
           </ul>
         </div>
 
-        <!-- Right: ad spend scale -->
+        <!-- Right: ad spend visualizer -->
         <div class="adspend-panel">
-          <div class="mpanel-label">Ad spend -- you control it</div>
-          <div style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.5;">Goes directly to Google. We manage the campaigns. Increase it when the data says to -- or stay at R3,500 as long as you want. You always approve any change.</div>
+          <div class="mpanel-label">Ad spend &mdash; drag to explore</div>
 
-          <div class="adspend-scale">
-            <div class="adscale-row">
-              <span class="adscale-month">Mo. 3&ndash;4</span>
-              <div class="adscale-bar-wrap"><div class="adscale-bar" style="width:28%"></div></div>
-              <div class="adscale-right">
-                <div class="adscale-total">R8,000/mo</div>
-                <div class="adscale-note">R4,500 flat + R3,500 ads</div>
-              </div>
+          <div class="spend-slider-header">
+            <span class="spend-slider-label">Monthly ad spend</span>
+            <span class="spend-val" id="spendVal">R3,500</span>
+          </div>
+          <input type="range" id="spendSlider" class="spend-range" min="1000" max="20000" step="500" value="3500">
+          <div class="spend-range-labels"><span>R1,000</span><span>R20,000</span></div>
+
+          <div id="spendBreakdown">
+            <div class="spend-row">
+              <div class="spend-row-label"><span class="spend-dot ads"></span>Ad spend &rarr; Google</div>
+              <span class="spend-row-amount ads" id="adsAmount">R3,500</span>
             </div>
-            <div class="adscale-row">
-              <span class="adscale-month">Mo. 5&ndash;6</span>
-              <div class="adscale-bar-wrap"><div class="adscale-bar" style="width:52%"></div></div>
-              <div class="adscale-right">
-                <div class="adscale-total">R10,000/mo</div>
-                <div class="adscale-note">R5,000 mgmt* + R5,000 ads</div>
-              </div>
+            <div class="spend-bar-visual">
+              <div class="spend-bar-fill ads" id="adsBar" style="width:44%"></div>
+              <div class="spend-bar-fill mgmt" id="mgmtBar" style="width:56%"></div>
             </div>
-            <div class="adscale-row">
-              <span class="adscale-month">Mo. 7&ndash;9</span>
-              <div class="adscale-bar-wrap"><div class="adscale-bar" style="width:75%"></div></div>
-              <div class="adscale-right">
-                <div class="adscale-total">R12,200/mo</div>
-                <div class="adscale-note">R5,200 mgmt* + R7,000 ads</div>
-              </div>
+            <div class="spend-row">
+              <div class="spend-row-label"><span class="spend-dot mgmt"></span>Management fee &rarr; Elemental</div>
+              <span class="spend-row-amount mgmt" id="mgmtAmount">R4,500</span>
             </div>
-            <div class="adscale-row">
-              <span class="adscale-month">Mo. 10&ndash;12</span>
-              <div class="adscale-bar-wrap"><div class="adscale-bar" style="width:100%"></div></div>
-              <div class="adscale-right">
-                <div class="adscale-total">R15,500/mo</div>
-                <div class="adscale-note">R5,500 mgmt* + R10,000 ads</div>
-              </div>
+            <div class="spend-total-row">
+              <span class="spend-total-label">Total monthly</span>
+              <span class="spend-total-amount" id="totalAmount">R8,000</span>
             </div>
           </div>
 
-          <div class="adspend-callout">
-            <strong>Our fee scales with you.</strong> Flat R4,500 until you hit R20k MRR, then it becomes R4,500 + 10% of ad spend (*). At R10k in ads, that&rsquo;s R5,500 from us &mdash; still under 6% of your revenue. Every spend increase is data-driven and agreed together.
+          <div class="spend-leads" id="spendLeads">
+            <div class="leads-stat"><div class="leads-val" id="leadClicks">70</div><div class="leads-label">clicks/mo</div></div>
+            <div class="leads-stat"><div class="leads-val" id="leadLeads">3&ndash;5</div><div class="leads-label">leads/mo</div></div>
+            <div class="leads-stat"><div class="leads-val" id="leadClients">~1</div><div class="leads-label">clients/mo</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--subtle);margin-top:8px;line-height:1.4;">Estimates based on avg R50 CPC, 4&ndash;7% landing page conversion, 20&ndash;30% close rate</div>
+
+          <div class="adspend-callout" style="margin-top:16px;">
+            <strong>Management fee stays flat at R4,500.</strong> Once you hit R20k MRR, it becomes R4,500 + 10% of ad spend. At R10k spend that&rsquo;s R5,500 from us &mdash; under 6% of your revenue. You approve every change.
           </div>
           <div class="adspend-callout" style="margin-top:10px;background:#EFF6FF;">
-            <strong style="color:var(--blue);">Why no ads in months 1&ndash;2:</strong> <span style="color:#3B5EA6;">We build the funnels first &mdash; ads before a converting site burn budget. From Month 3 we ease in at the minimum viable spend. The ramp shown is a suggested roadmap based on conservative assumptions. Push harder or hold back based on your risk appetite. You approve every step.</span>
+            <strong style="color:var(--blue);">Why no ads in months 1&ndash;2:</strong> <span style="color:#3B5EA6;">We build the funnels first. Ads before a converting site burn budget. From Month 3 we ease in conservatively &mdash; push harder or hold back based on your risk appetite.</span>
           </div>
         </div>
       </div>
@@ -1201,5 +1201,45 @@
   </div>
 </div>
 
+
+<script>
+  (function() {
+    var slider = document.getElementById('spendSlider');
+    if (!slider) return;
+
+    function fmt(n) {
+      return 'R' + n.toLocaleString('en-ZA');
+    }
+
+    function update() {
+      var spend = parseInt(slider.value);
+      var mgmt = 4500;
+      var total = spend + mgmt;
+      var adsPct = Math.round((spend / total) * 100);
+      var mgmtPct = 100 - adsPct;
+
+      // Leads math: avg R50 CPC, 4-7% conversion, 20-30% close
+      var clicks = Math.round(spend / 50);
+      var leadsLow = Math.max(1, Math.round(clicks * 0.04));
+      var leadsHigh = Math.max(1, Math.round(clicks * 0.07));
+      var clientsLow = (leadsLow * 0.2).toFixed(1);
+      var clientsHigh = (leadsHigh * 0.3).toFixed(1);
+      var clientStr = clientsLow === clientsHigh ? '~' + clientsLow : clientsLow + '–' + clientsHigh;
+
+      document.getElementById('spendVal').textContent = fmt(spend);
+      document.getElementById('adsAmount').textContent = fmt(spend);
+      document.getElementById('mgmtAmount').textContent = fmt(mgmt);
+      document.getElementById('totalAmount').textContent = fmt(total);
+      document.getElementById('adsBar').style.width = adsPct + '%';
+      document.getElementById('mgmtBar').style.width = mgmtPct + '%';
+      document.getElementById('leadClicks').textContent = clicks.toLocaleString('en-ZA');
+      document.getElementById('leadLeads').textContent = leadsLow + '–' + leadsHigh;
+      document.getElementById('leadClients').textContent = clientStr;
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  })();
+</script>
 </body>
 </html>
