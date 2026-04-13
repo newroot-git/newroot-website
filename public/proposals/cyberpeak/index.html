@@ -814,8 +814,8 @@
             <span class="spend-slider-label">Monthly ad spend</span>
             <span class="spend-val" id="spendVal">R3,500</span>
           </div>
-          <input type="range" id="spendSlider" class="spend-range" min="1000" max="20000" step="500" value="3500">
-          <div class="spend-range-labels"><span>R1,000</span><span>R20,000</span></div>
+          <input type="range" id="spendSlider" class="spend-range" min="1000" max="30000" step="500" value="3500">
+          <div class="spend-range-labels"><span>R1,000</span><span>R30,000</span></div>
 
           <div id="spendBreakdown">
             <div class="spend-row">
@@ -827,7 +827,7 @@
               <div class="spend-bar-fill mgmt" id="mgmtBar" style="width:56%"></div>
             </div>
             <div class="spend-row">
-              <div class="spend-row-label"><span class="spend-dot mgmt"></span>Management fee &rarr; Elemental</div>
+              <div class="spend-row-label"><span class="spend-dot mgmt"></span><span id="mgmtLabel">Management fee &rarr; Elemental</span></div>
               <span class="spend-row-amount mgmt" id="mgmtAmount">R4,500</span>
             </div>
             <div class="spend-total-row">
@@ -844,7 +844,7 @@
           <div style="font-size:11px;color:var(--subtle);margin-top:8px;line-height:1.4;">Estimates based on avg R50 CPC, 4&ndash;7% landing page conversion, 20&ndash;30% close rate</div>
 
           <div class="adspend-callout" style="margin-top:16px;">
-            <strong>Management fee stays flat at R4,500.</strong> Once you hit R20k MRR, it becomes R4,500 + 10% of ad spend. At R10k spend that&rsquo;s R5,500 from us &mdash; under 6% of your revenue. You approve every change.
+            <strong>Management fee stays flat at R4,500.</strong> Once your ad spend crosses R20,000/month, it becomes R4,500 + 10% of ad spend. At R20k spend that&rsquo;s R6,500 from us. Drag the slider past R20k to see it. You approve every increase.
           </div>
           <div class="adspend-callout" style="margin-top:10px;background:#EFF6FF;">
             <strong style="color:var(--blue);">Why no ads in months 1&ndash;2:</strong> <span style="color:#3B5EA6;">We build the funnels first. Ads before a converting site burn budget. From Month 3 we ease in conservatively &mdash; push harder or hold back based on your risk appetite.</span>
@@ -1213,7 +1213,7 @@
 
     function update() {
       var spend = parseInt(slider.value);
-      var mgmt = 4500;
+      var mgmt = spend > 20000 ? 4500 + Math.round(spend * 0.1) : 4500;
       var total = spend + mgmt;
       var adsPct = Math.round((spend / total) * 100);
       var mgmtPct = 100 - adsPct;
@@ -1229,6 +1229,8 @@
       document.getElementById('spendVal').textContent = fmt(spend);
       document.getElementById('adsAmount').textContent = fmt(spend);
       document.getElementById('mgmtAmount').textContent = fmt(mgmt);
+      var mgmtLabel = document.getElementById('mgmtLabel');
+      if (mgmtLabel) mgmtLabel.textContent = spend > 20000 ? 'Management fee → Elemental (R4,500 + 10%)' : 'Management fee → Elemental';
       document.getElementById('totalAmount').textContent = fmt(total);
       document.getElementById('adsBar').style.width = adsPct + '%';
       document.getElementById('mgmtBar').style.width = mgmtPct + '%';
