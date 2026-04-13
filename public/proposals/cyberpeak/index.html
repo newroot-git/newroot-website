@@ -486,8 +486,8 @@
     display: flex;
     flex-direction: column;
   }
-  .month-block.has-milestone { border-bottom: 3px solid var(--accent); }
-  .month-block.milestone-green { border-bottom: 3px solid #22C55E; }
+  .month-block.has-milestone { background: #FFF5F2; }
+  .month-block.milestone-green { background: #F2FCF5; }
 
   .mb-month {
     font-size: 11px;
@@ -846,6 +846,9 @@
           <div class="adspend-callout">
             <strong>Our fee scales with you.</strong> Flat R4,500 until you hit R20k MRR, then it becomes R4,500 + 10% of ad spend (*). At R10k in ads, that&rsquo;s R5,500 from us &mdash; still under 6% of your revenue. Every spend increase is data-driven and agreed together.
           </div>
+          <div class="adspend-callout" style="margin-top:10px;background:#EFF6FF;">
+            <strong style="color:var(--blue);">Why no ads in months 1&ndash;2:</strong> <span style="color:#3B5EA6;">We build the funnels first &mdash; ads before a converting site burn budget. From Month 3 we ease in at the minimum viable spend. The ramp shown is a suggested roadmap based on conservative assumptions. Push harder or hold back based on your risk appetite. You approve every step.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1127,7 +1130,8 @@
         <div class="mb-milestone green">R100k MRR target</div>
       </div>
 
-    
+    </div><!-- end .month-grid -->
+
     <!-- Not included -->
     <div class="not-included">
       <h3>What we'd recommend <span class="serif-i">avoiding</span></h3>
